@@ -32,3 +32,10 @@ Route::get('/about', function () {
 Route::get('/assessment', function () {
     return Inertia::render('Assessment'); // Ensure this matches your Vue component
 })->name('assessment');
+Route::get('/professionals', function () {
+    return Inertia::render('Professionals');
+});
+
+Route::get('/resources', function () {
+    return Inertia::render('Resources');
+});
