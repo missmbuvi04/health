@@ -11,8 +11,6 @@ return new class extends Migration {
             $table->string('title');
             $table->text('description')->nullable();
             $table->string('url')->nullable(); // For external resources
-            $table->string('file_path')->nullable(); // If the resource is a file
-            $table->string('category')->nullable(); // Article, PDF, Video, etc.
             $table->timestamps();
         });
     }
