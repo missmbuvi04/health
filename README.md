@@ -1,3 +1,43 @@
+##Clone the Repository**
+```sh
+git clone https://github.com/missmbuvi04/health.git
+cd YOUR_REPO_NAME
+##Install Dependencies
+composer install
+##Create Environment File
+cp .env.example .env
+##Generate Application Key
+php artisan key:generate
+##Set Up Database
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_db_user
+DB_PASSWORD=your_db_password
+##Run Migrations
+php artisan migrate
+##Start the Backend Server
+php artisan serve
+##Install Dependencies
+npm install
+##Compile Frontend Assets
+npm run dev
+##Start the Frontend Server
+npm run dev
+##Access the Project
+Once both servers are running:
+
+Open http://127.0.0.1:8000 in your browser to use the application.
+##Troubleshooting
+If you face issues with permissions:
+chmod -R 777 storage bootstrap/cache
+##If .env changes don’t apply:
+php artisan config:clear
+##If migrations fail:
+php artisan migrate:fresh
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
