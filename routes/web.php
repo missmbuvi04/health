@@ -1,9 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ResourceController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -17,6 +21,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/admin', function () {
+    return Inertia::render('Admin');
+})->name('admin');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -39,3 +48,6 @@ Route::get('/professionals', function () {
 Route::get('/resources', function () {
     return Inertia::render('Resources');
 });
+
+Route::get('/admin/resources', [ResourceController::class, 'index'])->name('admin.resources.index');
+Route::post('/admin/resources', [ResourceController::class, 'store'])->name('admin.resources.store');
