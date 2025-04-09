@@ -5,7 +5,7 @@
           
           <p class="text-center mt-4">Take this quick assessment to check your mental well-being.</p>
           
-          <div class="mt-6 bg-white text-black p-6 rounded-lg shadow-lg">
+          <div class="mt-6 bg-green text-grey p-6 rounded-lg shadow-lg">
               <form @submit.prevent="calculateResults">
                   <div v-for="(question, index) in questions" :key="index" class="mb-4">
                       <p class="font-semibold">{{ question.text }}</p>
@@ -23,7 +23,7 @@
               <p v-if="score > 5" class="text-lg font-bold text-red-500">Your score is high. It is recommended that you seek professional help.</p>
               <p v-else class="text-lg font-bold text-green-400">Your score is within a safe range. Explore our resources for support.</p>
               
-              <<div class="mt-4 flex justify-center gap-4">
+              <div class="mt-4 flex justify-center gap-4">
     <a v-if="score > 5" href="/professionals" class="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded">
         Find a Professional
     </a>
